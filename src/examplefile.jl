@@ -40,3 +40,14 @@ An example dummy function that is not exported and returns some text
 function privatefunction()
     return "This function is not exported"
 end
+
+"""
+$(TYPEDSIGNATURES)
+
+
+An SECOND example dummy function that is not exported and returns some text
+
+"""
+function dummyfunction_02()
+    return "A dummy function_02"
+end
