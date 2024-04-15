@@ -1,28 +1,13 @@
-# using PythonCall
-
-# elements = pyimport("gnpy.core.elements")
-
-# numpy= pyimport("numpy")
-# array = numpy.array
-
-# Currently errors appear if you use PythonCall functions
-
-# ideas to solve this problem:
-# 1. maybe don't "import" PythonCall with "using" statement, use another way
-# 2. try to use PyCall instead of PythonCall
 
 DEBUG_01 = true
 """
 $(TYPEDSIGNATURES)
 
-creates fiber description in julia dictionary format
+creates fiber object in julia dictionary format
 """
 function fiber_obj(complete_fiber_description_dict,list_of_attr,fiber_params_attr_list, py_modules)
 
     # attr_list_fiber_rm_no_setters_available =  ["lat","latitude","lng","loc", "location", "longitude","loss"]
-
-   
-    
     fiber_default_dict = Dict(
         "uid" => "dummy fiber",
         "params" => Dict(
@@ -71,12 +56,9 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates fiber description in julia dictionary format
+creates fiber params object in julia dictionary format
 """
 
-# using PythonCall
-
-# numpy_py = pyimport(numpy)
 
 function fiberparams_obj(complete_fiberparams_description_dict, list_of_attr, py_modules)
 
@@ -125,7 +107,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates Edfa object in julia dictionary format
 """
 function edfa_obj(complete_edfa_description_dict, list_of_attr, attr_list_edfa_params, attr_list_edfa_operational, py_modules)
 
@@ -306,7 +288,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates Edfa operational object in julia dictionary format
 """
 function edfa_operational_obj(complete_edfa_operational_description_dict, list_of_attr, py_modules)
 
@@ -329,7 +311,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates Edfa params object in julia dictionary format
 """
 function edfa_params_obj(complete_edfa_params_description_dict, list_of_attr, py_modules)
 
@@ -470,21 +452,10 @@ function edfa_params_obj(complete_edfa_params_description_dict, list_of_attr, py
         py_modules["builtins"].setattr(element_edfa_params, i ,complete_edfa_params_description_dict[i])
     end
 
-
-
-    #TODO original_edfa_params_object.nf_model #TODO # attention! # here must be a dictionary not an object
     
-
-
 
     return element_edfa_params
 end
-
-# TODO
-# fused, 
-# roadm
-# spectral information TODO
-
 """
 $(TYPEDSIGNATURES)
 
@@ -537,7 +508,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates roadm_params object in julia dictionary format
 """
 function roadm_params_obj(complete_roadm_params_description_dict, list_of_attr,py_modules)
 
@@ -556,26 +527,10 @@ function roadm_params_obj(complete_roadm_params_description_dict, list_of_attr,p
     return element_roadm_params
 end
 
-# """
-# $(TYPEDSIGNATURES)
-
-# creates Edfa description in julia dictionary format
-# """
-# function roadm_ref_carrier_obj(original_roadm_ref_carrier_object)
-
-#     roadm_ref_carrier_dict = Dict()
-
-#     roadm_ref_carrier_dict["baud_rate"] = original_roadm_ref_carrier_object.baud_rate
-#     roadm_ref_carrier_dict["slot_width"] = original_roadm_ref_carrier_object.slot_width
-
-
-#     return roadm_ref_carrier_dict
-# end
-
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates fused object in julia dictionary format
 """
 function fused_obj(complete_fused_description_dict,list_of_attr,attr_list_fused_params , py_modules)
 
@@ -614,7 +569,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates fused params object in julia dictionary format
 """
 function fused_params_obj(complete_fused_params_description_dict, list_of_attr, py_modules)
 
@@ -631,7 +586,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates spectral_information object in julia dictionary format
 """
 function spectral_information_obj(si_dictionary, py_modules)
 

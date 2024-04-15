@@ -5,7 +5,8 @@
 """
 $(TYPEDSIGNATURES)
 
-TOBE FILLED OUT
+creates full path description from cli example 02
+
 """
 function create_full_path_des_from_cli_examples_02(equipment, network, pw_input , py_modules)
 

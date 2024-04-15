@@ -31,13 +31,8 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates fiber description in julia dictionary format
+creates fiber_params description in julia dictionary format
 """
-
-# using PythonCall
-
-# numpy_py = pyimport(numpy)
-
 function fiberparams_des(original_fiberparams_object, attr_list, py_modules)
 
     complete_fiberparams_description_dict = Dict()
@@ -54,7 +49,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Transceiver description in julia dictionary format
+creates transceiver description in julia dictionary format
 """
 function transceiver_des(original_transceiver_object, attr_list,py_modules)
 
@@ -112,7 +107,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates Edfa_operational description in julia dictionary format
 """
 function edfa_operational_des(original_edfa_operational_object, attr_list, py_modules)
 
@@ -134,7 +129,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates Edfa_params description in julia dictionary format
 """
 function edfa_params_des(original_edfa_params_object, attr_list, py_modules)
 
@@ -151,15 +146,11 @@ function edfa_params_des(original_edfa_params_object, attr_list, py_modules)
     return edfa_params_dict
 end
 
-# TODO
-# fused, 
-# roadm
-# spectral information TODO
 
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates roadm description in julia dictionary format
 """
 function roadm_des(original_roadm_object, attr_list, attr_list_roadm_params, py_modules)
 
@@ -192,7 +183,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates roadm_params description in julia dictionary format
 """
 function roadm_params_des(original_roadm_params_object, attr_list, py_modules)
 
@@ -208,26 +199,11 @@ function roadm_params_des(original_roadm_params_object, attr_list, py_modules)
     return roadm_params_dict
 end
 
-# """
-# $(TYPEDSIGNATURES)
-
-# creates Edfa description in julia dictionary format
-# """
-# function roadm_ref_carrier_des(original_roadm_ref_carrier_object)
-
-#     roadm_ref_carrier_dict = Dict()
-
-#     roadm_ref_carrier_dict["baud_rate"] = original_roadm_ref_carrier_object.baud_rate
-#     roadm_ref_carrier_dict["slot_width"] = original_roadm_ref_carrier_object.slot_width
-
-
-#     return roadm_ref_carrier_dict
-# end
 
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates fused description in julia dictionary format
 """
 function fused_des(original_fused_object, attr_list, attr_list_fused_params, py_modules)
 
@@ -258,7 +234,7 @@ end
 """
 $(TYPEDSIGNATURES)
 
-creates Edfa description in julia dictionary format
+creates fused_params description in julia dictionary format
 """
 function fused_params_des(original_fused_params_object, attr_list, py_modules)
 
